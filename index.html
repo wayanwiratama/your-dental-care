@@ -865,6 +865,100 @@
   </div>
 </section>
 
+<!-- BOOKING FORM -->
+<section class="section" id="booking" style="background: white;">
+  <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <div class="section-tag" style="justify-content: center;">Booking Online</div>
+    <h2 class="section-title">Jadwalkan Kunjungan<br>Anda Sekarang</h2>
+    <p class="section-sub" style="margin: 0 auto 48px;">Isi form di bawah, kami akan konfirmasi jadwal Anda via WhatsApp dalam waktu kurang dari 1 jam.</p>
+  </div>
+
+  <div style="max-width: 640px; margin: 0 auto; background: var(--cream); border-radius: 24px; padding: 48px; border: 1px solid var(--border);">
+    <div style="display: grid; gap: 20px;">
+
+      <div>
+        <label style="font-size: 13px; font-weight: 500; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Nama Lengkap</label>
+        <input type="text" id="f-nama" placeholder="Contoh: Ni Luh Ayu Sari" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#1E7B6E'" onblur="this.style.borderColor='#E0DBD3'">
+      </div>
+
+      <div>
+        <label style="font-size: 13px; font-weight: 500; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Nomor WhatsApp</label>
+        <input type="tel" id="f-wa" placeholder="Contoh: 08123456789" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#1E7B6E'" onblur="this.style.borderColor='#E0DBD3'">
+      </div>
+
+      <div>
+        <label style="font-size: 13px; font-weight: 500; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Layanan yang Dibutuhkan</label>
+        <select id="f-layanan" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s; color: var(--dark); cursor: pointer;" onfocus="this.style.borderColor='#1E7B6E'" onblur="this.style.borderColor='#E0DBD3'">
+          <option value="" disabled selected>Pilih layanan...</option>
+          <option>Tambal Gigi</option>
+          <option>Scaling & Pembersihan Karang Gigi</option>
+          <option>Cabut Gigi</option>
+          <option>Veneer & Bleaching</option>
+          <option>Behel / Ortodontik</option>
+          <option>Perawatan Saluran Akar</option>
+          <option>Konsultasi Umum</option>
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div>
+          <label style="font-size: 13px; font-weight: 500; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Hari</label>
+          <select id="f-hari" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s; color: var(--dark); cursor: pointer;" onfocus="this.style.borderColor='#1E7B6E'" onblur="this.style.borderColor='#E0DBD3'">
+            <option value="" disabled selected>Pilih hari...</option>
+            <option>Senin</option>
+            <option>Selasa</option>
+            <option>Rabu</option>
+            <option>Kamis</option>
+            <option>Jumat</option>
+            <option>Sabtu</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: 500; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Jam</label>
+          <select id="f-jam" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1.5px solid var(--border); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s; color: var(--dark); cursor: pointer;" onfocus="this.style.borderColor='#1E7B6E'" onblur="this.style.borderColor='#E0DBD3'">
+            <option value="" disabled selected>Pilih jam...</option>
+            <option>09.00 WITA</option>
+            <option>10.00 WITA</option>
+            <option>11.00 WITA</option>
+            <option>12.00 WITA</option>
+            <option>13.00 WITA</option>
+            <option>14.00 WITA</option>
+            <option>15.00 WITA</option>
+            <option>16.00 WITA</option>
+            <option>17.00 WITA</option>
+            <option>18.00 WITA</option>
+            <option>19.00 WITA</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="kirimBooking()" style="width: 100%; padding: 18px; background: var(--teal); color: white; border: none; border-radius: 100px; font-size: 16px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; margin-top: 8px;" onmouseover="this.style.background='#2A9E8E'" onmouseout="this.style.background='#1E7B6E'">
+        💬 Kirim Booking via WhatsApp
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function kirimBooking() {
+  const nama = document.getElementById('f-nama').value.trim();
+  const wa = document.getElementById('f-wa').value.trim();
+  const layanan = document.getElementById('f-layanan').value;
+  const hari = document.getElementById('f-hari').value;
+  const jam = document.getElementById('f-jam').value;
+
+  if (!nama || !wa || !layanan || !hari || !jam) {
+    alert('Mohon lengkapi semua field sebelum mengirim booking.');
+    return;
+  }
+
+  const pesan = `Halo Your Dental Care, saya ingin booking:%0A%0ANama: ${encodeURIComponent(nama)}%0ANo. WA: ${encodeURIComponent(wa)}%0ALayanan: ${encodeURIComponent(layanan)}%0AHari: ${encodeURIComponent(hari)}%0AJam: ${encodeURIComponent(jam)}%0A%0ATerima kasih!`;
+
+  window.open(`https://wa.me/62895394592286?text=${pesan}`, '_blank');
+}
+</script>
+
 <!-- CTA -->
 <section class="cta-section">
   <h2>Siap Punya Senyum<br>yang Lebih Sehat?</h2>

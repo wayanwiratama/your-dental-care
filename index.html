@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Dental Care - Dokter Gigi Denpasar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --dark: #1A1A1A;
+    --soft-dark: #2D2D2D;
+    --teal: #1E7B6E;
+    --teal-light: #2A9E8E;
+    --teal-pale: #E8F5F3;
+    --gold: #C9A84C;
+    --gray: #6B6B6B;
+    --gray-light: #F0EDE8;
+    --border: #E0DBD3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.3px;
+  }
+
+  .logo span { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--teal-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 48px 80px;
+    gap: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(30,123,110,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal-pale);
+    color: var(--teal);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 24px rgba(30,123,110,0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,123,110,0.3);
+  }
+
+  .btn-secondary {
+    color: var(--dark);
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  .hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--teal-pale) 0%, #C8EBE6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #E8F5F3 0%, #B8DDD8 50%, #1E7B6E 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 48px;
+  }
+
+  .hero-image-icon {
+    width: 80px; height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  .hero-image-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .badge-icon {
+    width: 40px; height: 40px;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .badge-text { font-size: 13px; font-weight: 500; }
+  .badge-sub { font-size: 11px; color: var(--gray); }
+
+  /* LAYANAN */
+  .section {
+    padding: 96px 48px;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 8px 40px rgba(30,123,110,0.1);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--teal-pale);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* KENAPA PILIH KAMI */
+  .why-section {
+    background: var(--dark);
+    padding: 96px 48px;
+    color: white;
+  }
+
+  .why-section .section-tag { color: var(--gold); }
+  .why-section .section-title { color: white; }
+  .why-section .section-sub { color: rgba(255,255,255,0.55); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .why-item {
+    padding: 32px 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  .why-item:hover {
+    border-color: var(--teal-light);
+    background: rgba(30,123,110,0.1);
+  }
+
+  .why-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .why-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* TESTIMONI */
+  .testi-section {
+    padding: 96px 48px;
+    background: white;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testi-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .testi-stars {
+    color: var(--gold);
+    font-size: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .testi-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--soft-dark);
+    margin-bottom: 24px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testi-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--teal-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .testi-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  .testi-loc {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  /* LOKASI */
+  .location-section {
+    padding: 96px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .location-info { }
+
+  .info-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-row:first-child { border-top: 1px solid var(--border); }
+
+  .info-icon {
+    width: 44px; height: 44px;
+    background: var(--teal-pale);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .info-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .info-value {
+    font-size: 15px;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+
+  .map-placeholder {
+    background: var(--teal-pale);
+    border-radius: 24px;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .map-placeholder span:first-child { font-size: 48px; }
+  .map-placeholder span:last-child {
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--teal);
+    padding: 80px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.75);
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--teal);
+    padding: 18px 40px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    padding: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+  }
+
+  .footer-logo span { color: var(--teal-light); }
+
+  .footer-info {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .footer-wa {
+    color: var(--teal-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (max-width: 1024px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
+    .hero-image { max-width: 480px; margin: 0 auto; aspect-ratio: 16/9; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .location-section { grid-template-columns: 1fr; padding: 60px 24px; }
+    .section { padding: 60px 24px; }
+    .why-section { padding: 60px 24px; }
+    .testi-section { padding: 60px 24px; }
+    .cta-section { padding: 60px 24px; }
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .footer-info { text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Your <span>Dental</span> Care</div>
+  <a href="https://wa.me/6281234567890" class="nav-cta">📱 Booking Sekarang</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Klinik Gigi Terpercaya di Denpasar</div>
+    <h1>Senyum Sehat,<br><em>Hidup Lebih</em><br>Percaya Diri</h1>
+    <p>Perawatan gigi profesional untuk seluruh keluarga. Nyaman, bersih, dan ditangani langsung oleh dokter gigi berpengalaman di jantung kota Denpasar.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/6281234567890" class="btn-primary">💬 Booking via WhatsApp</a>
+      <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Pasien Puas</div>
+      </div>
+      <div>
+        <div class="stat-num">8 Thn</div>
+        <div class="stat-label">Pengalaman</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">Rating Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-inner">
+      <div class="hero-image-icon">🦷</div>
+      <div class="hero-image-text">Your Dental Care<br>Denpasar</div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-icon">✅</div>
+      <div>
+        <div class="badge-text">Dokter Bersertifikat</div>
+        <div class="badge-sub">Terdaftar Resmi IDI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section class="section" id="layanan">
+  <div class="section-tag">Layanan Kami</div>
+  <h2 class="section-title">Semua Kebutuhan<br>Gigi Anda di Satu Tempat</h2>
+  <p class="section-sub">Dari perawatan rutin hingga estetika gigi, kami siap memberikan hasil terbaik dengan teknologi modern.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <div class="service-name">Tambal Gigi</div>
+      <div class="service-desc">Penambalan gigi berlubang menggunakan bahan komposit warna gigi untuk hasil yang natural dan tahan lama.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Scaling & Pembersihan</div>
+      <div class="service-desc">Pembersihan karang gigi secara menyeluruh untuk gigi lebih bersih, segar, dan terbebas dari plak membandel.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🩺</div>
+      <div class="service-name">Cabut Gigi</div>
+      <div class="service-desc">Pencabutan gigi dengan prosedur aman, minim rasa sakit, dan pemulihan cepat menggunakan anestesi lokal modern.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💎</div>
+      <div class="service-name">Veneer & Bleaching</div>
+      <div class="service-desc">Perawatan estetika untuk gigi lebih putih, rata, dan bersinar. Tampil percaya diri dengan senyum impian Anda.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">😁</div>
+      <div class="service-name">Behel / Ortodontik</div>
+      <div class="service-desc">Pemasangan kawat gigi untuk merapikan susunan gigi dengan berbagai pilihan jenis behel yang sesuai kebutuhan.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔬</div>
+      <div class="service-name">Perawatan Saluran Akar</div>
+      <div class="service-desc">Penanganan infeksi saluran akar gigi secara profesional untuk menyelamatkan gigi asli Anda dari pencabutan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KENAPA PILIH KAMI -->
+<section class="why-section" id="tentang">
+  <div class="section-tag">Keunggulan Kami</div>
+  <h2 class="section-title">Kenapa Pasien Setia<br>Memilih Kami?</h2>
+  <p class="section-sub">Kepercayaan pasien adalah prioritas utama kami dalam setiap langkah perawatan.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon">👨‍⚕️</div>
+      <div class="why-title">Dokter Gigi Berpengalaman</div>
+      <div class="why-desc">Ditangani langsung oleh dokter gigi tersertifikasi dengan pengalaman lebih dari 8 tahun.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🏥</div>
+      <div class="why-title">Peralatan Modern & Steril</div>
+      <div class="why-desc">Menggunakan alat kedokteran gigi terkini yang disterilisasi sesuai standar kesehatan internasional.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📅</div>
+      <div class="why-title">Buka 6 Hari Seminggu</div>
+      <div class="why-desc">Senin hingga Sabtu, pagi hingga malam. Jadwal fleksibel yang menyesuaikan kesibukan Anda.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📍</div>
+      <div class="why-title">Lokasi Strategis</div>
+      <div class="why-desc">Terletak di pusat Denpasar, mudah dijangkau dari berbagai penjuru kota dengan parkir tersedia.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">💬</div>
+      <div class="why-title">Konsultasi Tanpa Biaya Tambahan</div>
+      <div class="why-desc">Konsultasi awal gratis. Kami menjelaskan semua opsi perawatan secara transparan sebelum tindakan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="testi-section" id="testimoni">
+  <div class="section-tag">Testimoni</div>
+  <h2 class="section-title">Apa Kata Pasien Kami?</h2>
+  <p class="section-sub">Kepuasan pasien adalah ukuran keberhasilan terbaik yang kami miliki.</p>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Pertama kali ke dokter gigi setelah bertahun-tahun takut. Ternyata dokternya sangat sabar menjelaskan prosedurnya, tidak sakit sama sekali. Scaling-nya bersih banget dan harganya juga masuk akal. Pasti balik lagi!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Ni Luh Ayu Sari</div>
+          <div class="testi-loc">Denpasar Selatan</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Bawa anak saya yang umur 7 tahun untuk tambal gigi. Dokternya luar biasa sabar menghadapi anak kecil yang takut. Anaknya sekarang bahkan minta balik lagi karena katanya tidak sakit. Terima kasih Your Dental Care!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div>
+          <div class="testi-name">Made Artha Wijaya</div>
+          <div class="testi-loc">Kerobokan, Badung</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Pasang veneer di sini hasilnya natural sekali, persis seperti yang saya inginkan. Dokternya teliti dan mau dengerin keinginan pasien. Tempat bersih, staf ramah, proses cepat. Sangat direkomendasikan untuk yang mau veneer di Denpasar."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Dewi Puspita Ratna</div>
+          <div class="testi-loc">Renon, Denpasar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKASI -->
+<section class="location-section" id="lokasi">
+  <div class="location-info">
+    <div class="section-tag">Lokasi & Jam Buka</div>
+    <h2 class="section-title">Mudah Ditemukan,<br>Mudah Dijangkau</h2>
+
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">Alamat</div>
+        <div class="info-value">Jl. Teuku Umar No.8, Dauh Puri Klod,<br>Denpasar Barat, Bali 80113</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🕐</div>
+      <div>
+        <div class="info-label">Jam Operasional</div>
+        <div class="info-value">Senin – Sabtu: 09.00 – 20.00 WITA<br>Minggu: Tutup</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📱</div>
+      <div>
+        <div class="info-label">WhatsApp / Telepon</div>
+        <div class="info-value">+62 812-3999-5311</div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/6281239995311" class="btn-primary" style="margin-top: 32px; display: inline-flex;">
+      💬 Chat WhatsApp Sekarang
+    </a>
+  </div>
+
+  <div class="map-placeholder">
+    <span>🗺️</span>
+    <span>Your Dental Care – Denpasar</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Siap Punya Senyum<br>yang Lebih Sehat?</h2>
+  <p>Booking sekarang via WhatsApp. Konsultasi pertama gratis, tanpa antrian panjang.</p>
+  <a href="https://wa.me/6281239995311" class="btn-white">
+    💬 Booking via WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Your <span>Dental</span> Care</div>
+  <div class="footer-info">
+    Jl. Teuku Umar No.8, Denpasar Barat, Bali<br>
+    Senin – Sabtu: 09.00 – 20.00 WITA
+  </div>
+  <a href="https://wa.me/6281239995311" class="footer-wa">
+    📱 +62 812-3999-5311
+  </a>
+</footer>
+
+</body>
+</html>
